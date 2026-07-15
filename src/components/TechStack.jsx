@@ -12,7 +12,7 @@ import {
   Wrench
 } from 'lucide-react';
 
-import { techStack, techCategories } from '../data/techStack';
+import { techStack, techCategories } from '../data/techstack';
 import SectionHeading from './SectionHeading';
 
 const iconMap = {
