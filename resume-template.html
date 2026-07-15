@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niladri Podder - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            line-height: 1.5;
+            color: #333;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px 50px;
+            background: white;
+        }
+        
+        @media print {
+            body {
+                padding: 20px;
+            }
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #0857b2;
+            padding-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 32px;
+            color: #0891b2;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .title {
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .contact {
+            font-size: 14px;
+            color: #4b5563;
+            margin-top: 10px;
+        }
+        
+        .contact a {
+            color: #0891b2;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        h2 {
+            font-size: 20px;
+            color: #0891b2;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .job {
+            margin-bottom: 20px;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        
+        .job-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1f2937;
+        }
+        
+        .job-period {
+            font-size: 13px;
+            color: #6b7280;
+            font-weight: 600;
+        }
+        
+        .company {
+            font-size: 14px;
+            color: #4b5563;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .description {
+            font-size: 13px;
+            color: #4b5563;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .highlights {
+            margin-top: 8px;
+        }
+        
+        .highlights ul {
+            list-style-position: inside;
+            padding-left: 0;
+        }
+        
+        .highlights li {
+            font-size: 12px;
+            color: #4b5563;
+            margin-bottom: 3px;
+            padding-left: 15px;
+            text-indent: -15px;
+        }
+        
+        .tech-section {
+            margin-bottom: 15px;
+        }
+        
+        .tech-category {
+            font-weight: bold;
+            color: #1f2937;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .tech-list {
+            font-size: 12px;
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .summary {
+            font-size: 13px;
+            color: #4b5563;
+            line-height: 1.7;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        
+        @page {
+            margin: 0.5in;
+            size: A4;
+        }
+        
+        @media print {
+            @page {
+                margin: 0.5in;
+                size: A4;
+            }
+            
+            body {
+                margin: 0;
+                padding: 20px;
+            }
+            
+            /* Hide browser default headers and footers */
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    </style>
+    <style>
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            background: #0891b2;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        
+        .print-button:hover {
+            background: #0e7490;
+        }
+        
+        @media print {
+            .print-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">📄 Print/Save as PDF</button>
+    <header>
+        <h1>NILADRI PODDER</h1>
+        <div class="title">SAP AI Architect | Generative AI Lead - South East Asia</div>
+        <div class="contact">
+            +91 8820522660 |
+            <a href="mailto:niladri.podder12@gmail.com">niladri.podder12@gmail.com</a> |
+            <a href="https://www.linkedin.com/in/niladri-podder-96a9b8142/">LinkedIn</a> |
+            <a href="https://github.com/niladri30">GitHub</a> |
+            <a href="https://niladri30.github.io/ai-portfolio/">Portfolio</a>
+        </div>
+    </header>
+
+    <div class="section">
+        <h2>PROFESSIONAL SUMMARY</h2>
+        <div class="summary">
+            Seasoned SAP AI Architect and Generative AI Lead with 14+ years of experience spanning enterprise AI, IoT solutions, and cloud architecture. Currently leading AI initiatives across South East Asia, previously drove successful implementations across multiple business lines in India. Expert in architecting and delivering scalable AI solutions on SAP BTP, with deep expertise in Large Language Models, Agentic AI, and IoT protocols (MQTT, LwM2M, LORA). Built and mentored a 45+ member AI team, delivering 17+ enterprise-grade AI solutions across manufacturing, banking, oil & gas, and shared services domains. Proven track record of reducing operational time by up to 75% through intelligent automation and conversational AI interfaces.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>PROFESSIONAL EXPERIENCE</h2>
+        
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">SAP AI Architect | AI Lead - South East Asia</div>
+                <div class="job-period">2023 - Present</div>
+            </div>
+            <div class="company">SAP Labs | South East Asia (Previously India)</div>
+            <div class="description">
+                Leading enterprise AI architecture and solution delivery across South East Asia. Previously led AI initiatives for India with numerous success stories across multiple business lines. Driving adoption of SAP AI services, generative AI, and agentic workflows in customer engagements.
+            </div>
+            <div class="highlights">
+                <ul>
+                    <li>Currently leading AI initiatives for South East Asia region</li>
+                    <li>Built and mentored a 45+ member AI team across multiple geographies</li>
+                    <li>Architected and delivered 17+ enterprise AI solutions across manufacturing, finance, and oil & gas</li>
+                    <li>Designed AI-powered business process automation solutions reducing operational time by up to 75%</li>
+                    <li>Drove SAP BTP AI Core and Generative AI Hub adoption across customer base</li>
+                    <li>Established best practices for RAG, vector search, and agentic AI workflows</li>
+                    <li>Integrated AI with SAP S/4HANA across inventory, procurement, and finance domains</li>
+                    <li>Built reusable AI frameworks and accelerators for rapid deployment</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">Senior Solution Architect | IoT Practice Lead</div>
+                <div class="job-period">2021 - 2023</div>
+            </div>
+            <div class="company">Amazon Web Services (AWS) | India</div>
+            <div class="description">
+                Led IoT initiatives and solution architecture for 33+ customers across India. Aligned pre-sales, solution design, and customer engagement to deliver end-to-end IoT solutions using AWS services and IoT protocols.
+            </div>
+            <div class="highlights">
+                <ul>
+                    <li>Headed IoT initiative serving 33+ customers across India</li>
+                    <li>Led pre-sales and solution design for enterprise IoT deployments</li>
+                    <li>Architected end-to-end IoT solutions using AWS IoT Core, Greengrass, and analytics services</li>
+                    <li>Implemented device connectivity using MQTT, CoAP, and HTTP protocols</li>
+                    <li>Designed sensor integration solutions for industrial IoT deployments</li>
+                    <li>Awarded as Top Performer in a quarter for exceptional delivery and customer satisfaction</li>
+                    <li>Designed scalable IoT architectures for manufacturing and industrial sectors</li>
+                    <li>Implemented device management and monitoring for large-scale deployments</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">Solution Architect</div>
+                <div class="job-period">2018 - 2021</div>
+            </div>
+            <div class="company">SAP Labs | India</div>
+            <div class="description">
+                Solution architecture for SAP BTP applications with focus on cloud-native development, integration, and enterprise solutions. Early contributions to AI/ML exploration initiatives.
+            </div>
+            <div class="highlights">
+                <ul>
+                    <li>Designed enterprise solutions on SAP BTP and Cloud Foundry</li>
+                    <li>Led integration architecture for S/4HANA Cloud</li>
+                    <li>Implemented workflow automation using SAP Build</li>
+                    <li>Mentored development teams on cloud-native practices</li>
+                    <li>Contributed to early AI/ML exploration initiatives</li>
+                    <li>Established integration patterns for hybrid landscapes</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">Technical Architect | IoT Platform Lead</div>
+                <div class="job-period">2015 - 2018</div>
+            </div>
+            <div class="company">BT (British Telecom) | India</div>
+            <div class="description">
+                Led the development and deployment of BT's IoT Platform, one of the company's biggest wins in the UK market. Architected and delivered enterprise IoT solutions including Smart Office with comprehensive device connectivity using industry-standard IoT protocols.
+            </div>
+            <div class="highlights">
+                <ul>
+                    <li>Built BT's IoT Platform from ground up, hosted on BT's own infrastructure</li>
+                    <li>Delivered one of BT's biggest wins in UK market with widespread customer adoption</li>
+                    <li>Implemented multi-protocol device connectivity (MQTT, LwM2M, HTTP, CoAP)</li>
+                    <li>Architected and implemented Smart Office solution with sensor integration</li>
+                    <li>Designed device management framework for thousands of connected devices</li>
+                    <li>Integrated LORA-based sensors for long-range low-power communications</li>
+                    <li>Led technical teams in delivering complex IoT and integration solutions</li>
+                    <li>Established IoT architecture standards and best practices for BT</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">Senior Software Engineer</div>
+                <div class="job-period">2012 - 2015</div>
+            </div>
+            <div class="company">Tata Consultancy Services (TCS) | India</div>
+            <div class="description">
+                Software development and technical leadership for banking and financial services clients. Progressed from developer to technical lead roles.
+            </div>
+            <div class="highlights">
+                <ul>
+                    <li>Developed enterprise applications for banking clients</li>
+                    <li>Led technical teams and code reviews</li>
+                    <li>Contributed to architecture and design decisions</li>
+                    <li>Implemented CI/CD practices and development best practices</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>TECHNICAL EXPERTISE</h2>
+        
+        <div class="tech-section">
+            <div class="tech-category">AI & Generative AI:</div>
+            <div class="tech-list">
+                Large Language Models, Generative AI, MCP and A2A, Agentic AI, LangChain, LangGraph, RAG (Retrieval-Augmented Generation), Vector Search & Embeddings, Prompt Engineering
+            </div>
+        </div>
+
+        <div class="tech-section">
+            <div class="tech-category">SAP Ecosystem:</div>
+            <div class="tech-list">
+                SAP BTP, SAP AI Core, SAP Generative AI Hub, SAP Build Process Automation, SAP Build Apps, SAP HANA Cloud, SAP S/4HANA Integration, OData & REST APIs
+            </div>
+        </div>
+
+        <div class="tech-section">
+            <div class="tech-category">IoT & Protocols:</div>
+            <div class="tech-list">
+                MQTT, LwM2M (Lightweight M2M), LORA (Long Range), CoAP, HTTP/HTTPS for IoT, WebSocket, AMQP, IoT Device Management, Edge Computing, Sensor Integration, IoT Security & Authentication, Device Provisioning & OTA Updates, NVIDIA Jetson Nano, Raspberry Pi (Cluster)
+            </div>
+        </div>
+
+        <div class="tech-section">
+            <div class="tech-category">Backend & Development:</div>
+            <div class="tech-list">
+                Python, Flask, FastAPI, Streamlit, Java, Spring, REST API Design, Microservices Architecture
+            </div>
+        </div>
+
+        <div class="tech-section">
+            <div class="tech-category">Data & Knowledge:</div>
+            <div class="tech-list">
+                SAP HANA Cloud, MongoDB, Neo4j (Knowledge Graphs), FAISS, ChromaDB, Knowledge Graph Design, Vector Databases
+            </div>
+        </div>
+
+        <div class="tech-section">
+            <div class="tech-category">Cloud & DevOps:</div>
+            <div class="tech-list">
+                SAP BTP, AWS, Microsoft Azure, Docker, Kubernetes, GitHub/Git, SAP BTP Kyma, Cloud Foundry, CI/CD Pipelines, JFrog Artifactory
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>KEY ACHIEVEMENTS</h2>
+        <div class="highlights">
+            <ul>
+                <li>Delivered AI solutions reducing operational time by up to 75% across multiple enterprises</li>
+                <li>Enabled non-technical users to leverage AI through intuitive conversational interfaces</li>
+                <li>Successfully delivered 33+ IoT customer engagements at AWS</li>
+                <li>Built BT's IoT Platform serving multiple UK customers, one of BT's biggest wins</li>
+                <li>Recognized as Top Performer at AWS for exceptional delivery and customer satisfaction</li>
+                <li>Built reusable AI frameworks and accelerators for rapid enterprise deployment</li>
+                <li>Established IoT architecture standards and best practices for multiple organizations</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CORE COMPETENCIES</h2>
+        <div class="tech-list">
+            Enterprise AI Architecture • Generative AI & LLMs • SAP BTP AI Services • Agentic Workflows • MCP and A2A • IoT Platform Development • IoT Protocols (MQTT, LwM2M, LORA, CoAP) • Team Leadership & Mentoring • Solution Architecture • Cloud-Native Development • API Design & Integration • Device Management • Edge Computing • RAG & Vector Search
+        </div>
+    </div>
+</body>
+</html>
+</html>
