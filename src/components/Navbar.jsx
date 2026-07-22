@@ -61,7 +61,7 @@ const Navbar = ({ theme, toggleTheme, activeSection }) => {
               className="text-2xl font-bold gradient-text cursor-pointer"
               onClick={() => scrollToSection('home')}
             >
-              NP
+              NRK
             </motion.div>
 
             {/* Desktop Navigation */}
