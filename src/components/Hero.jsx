@@ -1,17 +1,7 @@
-
 import { motion } from 'framer-motion';
-import { ArrowDown, Mail, Briefcase, Users } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 
 const Hero = () => {
-  const specialties = [
-    'Generative AI',
-    'Agentic AI',
-    'Enterprise AI',
-    'AI Platforms',
-    'Product Architecture',
-    'Cloud & Data'
-  ];
-
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -86,7 +76,7 @@ const Hero = () => {
             <div className="w-32 h-32 rounded-full bg-gradient-to-br from-accent-cyan to-accent-purple p-1">
               <img
                 src="./profile.jpg"
-                alt="Nihar Ranjan Kanungo"
+                alt="Himadri Roy"
                 className="w-full h-full rounded-full object-cover"
               />
             </div>
@@ -99,7 +89,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-5xl md:text-7xl font-bold text-white mb-4 text-shadow"
           >
-            Nihar Ranjan Kanungo
+            Himadri Roy
           </motion.h1>
 
           {/* Title */}
@@ -109,7 +99,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-2xl md:text-4xl font-semibold gradient-text mb-6"
           >
-            AI Transformation Leader | Principal Product & Platform Architect
+            Program Director | Delivery Lead | AI-Powered Business Transformation
           </motion.h2>
 
           {/* Tagline */}
@@ -119,65 +109,10 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto"
           >
-            Architecting Enterprise AI. Building Intelligent Platforms.
-            Transforming Businesses with Generative AI, Agentic AI,
-            Data and Cloud.
+            20+ years driving large-scale business transformation, portfolio
+            management, and AI-led process improvement across global consulting
+            and industry environments.
           </motion.p>
-
-          {/* Specialties */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-wrap justify-center gap-3 mb-12"
-          >
-            {specialties.map((specialty, index) => (
-              <motion.span
-                key={specialty}
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.7 + index * 0.1
-                }}
-                className="px-4 py-2 rounded-full glass-effect text-sm text-gray-200 border border-accent-cyan/30"
-              >
-                {specialty}
-              </motion.span>
-            ))}
-          </motion.div>
-
-          {/* CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-wrap justify-center gap-4"
-          >
-            <button
-              onClick={() => scrollToSection('projects')}
-              className="btn-primary flex items-center gap-2"
-            >
-              <Briefcase className="w-5 h-5" />
-              Explore My Work
-            </button>
-
-            <button
-              onClick={() => scrollToSection('stories')}
-              className="btn-secondary flex items-center gap-2"
-            >
-              <Users className="w-5 h-5" />
-              Transformation Stories
-            </button>
-
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="btn-secondary flex items-center gap-2"
-            >
-              <Mail className="w-5 h-5" />
-              Let's Connect
-            </button>
-          </motion.div>
         </motion.div>
 
         {/* Scroll indicator */}
@@ -202,4 +137,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

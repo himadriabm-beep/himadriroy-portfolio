@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Users, Rocket, Building2, Target } from 'lucide-react';
+import { Users, Rocket, Building2, Target, Zap, ShieldCheck } from 'lucide-react';
 import { metrics } from '../data/metrics';
 
 const iconMap = {
@@ -8,6 +8,8 @@ const iconMap = {
   rocket: Rocket,
   building: Building2,
   target: Target,
+  zap: Zap,
+  shield: ShieldCheck,
 };
 
 const AnimatedCounter = ({ value, suffix, duration = 2 }) => {
@@ -42,7 +44,7 @@ const AnimatedCounter = ({ value, suffix, duration = 2 }) => {
   }, [value, duration, isInView]);
 
   return (
-    <span ref={ref} className="text-5xl md:text-6xl font-bold gradient-text">
+    <span ref={ref} className="text-3xl md:text-4xl font-bold gradient-text">
       {count}{suffix}
     </span>
   );
@@ -54,7 +56,7 @@ const Metrics = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.15
       }
     }
   };
@@ -102,7 +104,7 @@ const Metrics = () => {
             Impact & Leadership
           </h2>
           <p className="text-xl text-gray-300">
-            Driving enterprise AI transformation at scale
+            Driving large-scale program delivery and AI-led transformation
           </p>
         </motion.div>
 
@@ -111,7 +113,7 @@ const Metrics = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-2 md:grid-cols-3 gap-5 max-w-5xl mx-auto"
         >
           {metrics.map((metric) => {
             const Icon = iconMap[metric.icon];
@@ -120,14 +122,14 @@ const Metrics = () => {
                 key={metric.id}
                 variants={itemVariants}
                 whileHover={{ 
-                  y: -10,
+                  y: -6,
                   transition: { duration: 0.3 }
                 }}
-                className="glass-effect p-8 rounded-2xl border border-gray-700/30 hover:border-accent-cyan/50 transition-all duration-300 text-center group"
+                className="glass-effect p-5 rounded-2xl border border-gray-700/30 hover:border-accent-cyan/50 transition-all duration-300 text-center group"
               >
-                <div className="mb-4 flex justify-center">
-                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-accent-cyan to-accent-purple flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="w-8 h-8 text-white" />
+                <div className="mb-3 flex justify-center">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-cyan to-accent-purple flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Icon className="w-6 h-6 text-white" />
                   </div>
                 </div>
                 
@@ -136,11 +138,11 @@ const Metrics = () => {
                   suffix={metric.suffix}
                 />
                 
-                <h3 className="text-lg font-semibold text-white mt-4 mb-2">
+                <h3 className="text-base font-semibold text-white mt-3 mb-1">
                   {metric.label}
                 </h3>
                 
-                <p className="text-gray-400 text-sm">
+                <p className="text-gray-400 text-xs leading-relaxed">
                   {metric.description}
                 </p>
               </motion.div>
@@ -158,8 +160,8 @@ const Metrics = () => {
         >
           <div className="glass-effect inline-block px-8 py-4 rounded-full">
             <p className="text-gray-300">
-              <span className="font-semibold text-accent-cyan">Proven expertise</span> in 
-              Proven leadership in AI + Data + Cloud + Enterprise Platforms at scale
+              <span className="font-semibold text-accent-cyan">Proven leadership</span> in
+              Program Management, AI-Led Transformation, and PMO Leadership at scale
             </p>
           </div>
         </motion.div>

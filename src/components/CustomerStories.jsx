@@ -1,12 +1,9 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, Building2, TrendingUp, CheckCircle, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Building2, TrendingUp, CheckCircle, Sparkles } from 'lucide-react';
 import { customerStories } from '../data/stories';
 import SectionHeading from './SectionHeading';
 
 const CustomerStories = () => {
-  const [selectedStory, setSelectedStory] = useState(null);
-
   return (
     <section id="stories" className="section-padding bg-white dark:bg-dark-900">
       <div className="container-custom">
@@ -139,61 +136,11 @@ const CustomerStories = () => {
                     {story.impact.businessValue}
                   </p>
                 </div>
-
-                {/* View Details Button */}
-                <button
-                  onClick={() => setSelectedStory(story)}
-                  className="mt-6 flex items-center gap-2 text-accent-cyan hover:text-accent-purple transition-colors duration-300 font-semibold"
-                >
-                  View Full Story
-                  <ChevronRight className="w-5 h-5" />
-                </button>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
-
-      {/* Full Story Modal */}
-      <AnimatePresence>
-        {selectedStory && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setSelectedStory(null)}
-              className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-            >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 50 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.9, y: 50 }}
-                onClick={(e) => e.stopPropagation()}
-                className="glass-effect max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-2xl p-8 border border-gray-700/30"
-              >
-                <h2 className="text-3xl font-bold gradient-text mb-6">
-                  {selectedStory.title}
-                </h2>
-                
-                <div className="space-y-6 text-gray-300">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Outcomes</h3>
-                    <p>{selectedStory.outcomes}</p>
-                  </div>
-                </div>
-
-                <button
-                  onClick={() => setSelectedStory(null)}
-                  className="mt-8 btn-primary"
-                >
-                  Close
-                </button>
-              </motion.div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
     </section>
   );
 };

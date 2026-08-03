@@ -12,8 +12,6 @@ const Navbar = ({ theme, toggleTheme, activeSection }) => {
     { id: 'about', label: 'About' },
     { id: 'metrics', label: 'Impact' },
     { id: 'stories', label: 'Success Stories' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'tech', label: 'Tech Stack' },
     { id: 'timeline', label: 'Journey' },
     { id: 'contact', label: 'Contact' },
   ];
@@ -61,7 +59,7 @@ const Navbar = ({ theme, toggleTheme, activeSection }) => {
               className="text-2xl font-bold gradient-text cursor-pointer"
               onClick={() => scrollToSection('home')}
             >
-              NRK
+              HR
             </motion.div>
 
             {/* Desktop Navigation */}

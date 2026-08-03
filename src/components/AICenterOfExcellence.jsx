@@ -1,55 +1,171 @@
 import { motion } from 'framer-motion';
 import {
-  BrainCircuit,
-  Lightbulb,
-  Boxes,
-  Share2,
+  Compass,
+  Users,
+  Layers,
+  ShieldCheck,
+  GraduationCap,
   Rocket,
-  TrendingUp
+  BrainCircuit,
+  ClipboardList,
+  BarChart3,
+  Network,
+  Wrench,
+  Target,
+  Mic
 } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 
 const AICenterOfExcellence = () => {
-  const FlowLine = ({ className = '', delay = 0 }) => (
-    <div className={`absolute overflow-hidden ${className}`}>
-      <motion.div
-        initial={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1, delay }}
-        className="w-full h-full bg-gradient-to-r from-accent-cyan via-accent-purple to-accent-cyan origin-left"
-      />
-    </div>
-  );
+  const aiInitiatives = [
+    {
+      icon: Compass,
+      title: 'AI CoE Objective & Framework',
+      description:
+        'Defined the objective and framework for the AI CoE, and how it navigates Consulting through massive change using the ADKAR change management model.'
+    },
+    {
+      icon: Users,
+      title: 'Future of Program Roles',
+      description:
+        'Mapped Scrum Master, PM, Program Manager, and RTE roles against a forward-looking AI operating model, grounded in the WEF 2026 report.'
+    },
+    {
+      icon: Layers,
+      title: '6-Stage AI Operating Model',
+      description:
+        'Co-designed a 6-stage AI Operating Model, from which a layered POD structure was built — Portfolio to POD, supported by Shared Services.'
+    },
+    {
+      icon: ShieldCheck,
+      title: 'AI-Native Governance Model',
+      description:
+        'Designed an AI-native governance model based on COBIT, drawing on inputs from multiple sources as part of the AI CoE governance committee.'
+    },
+    {
+      icon: GraduationCap,
+      title: 'AI Literacy Campaign',
+      description:
+        'Designed a role-based AI Literacy campaign so every team member understands Data, Models, Business Decisions & Impact, and AI itself.'
+    },
+    {
+      icon: Rocket,
+      title: 'AI Innovation & ROI',
+      description:
+        'Drove adoption of AI tools, agents, and skills for efficiency gains, tracked against business KPIs for ROI and measurable improvement.'
+    }
+  ];
 
-  const CapabilityCard = ({
-    icon: Icon,
-    title,
-    description,
-    delay = 0
-  }) => (
-    <motion.div
-      initial={{ opacity: 0, y: 25 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay }}
-      whileHover={{ y: -6, scale: 1.02 }}
-      className="glass-effect p-5 rounded-2xl border border-gray-700/30 hover:border-accent-cyan/50 transition-all duration-300 text-center"
-    >
-      <div className="flex justify-center mb-4">
-        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent-cyan to-accent-purple flex items-center justify-center">
-          <Icon className="w-7 h-7 text-white" />
-        </div>
+  const programExcellenceInitiatives = [
+    {
+      icon: ClipboardList,
+      title: 'Enterprise Standards & Operating Models',
+      description:
+        'Defined the playbooks and quality bars for how programs run — reducing delivery variance by 30-40% and helping new programs scale faster.'
+    },
+    {
+      icon: BarChart3,
+      title: 'Portfolio Visibility & Decision Intelligence',
+      description:
+        'Built dashboards and early-warning systems giving leadership real-time clarity — cutting escalations by 25-50% and speeding up decisions.'
+    },
+    {
+      icon: Network,
+      title: 'Cross-Functional Alignment & Orchestration',
+      description:
+        'Aligned Product, Engineering, Sales, Ops, Finance, and CX around shared goals — accelerating delivery timelines by 15-20%.'
+    },
+    {
+      icon: Wrench,
+      title: 'Capability Building & Skill Uplift',
+      description:
+        'Built PM competency frameworks, training, and tooling across program teams — lifting PM productivity by 20-30%.'
+    },
+    {
+      icon: Target,
+      title: 'Strategic Program Delivery & Transformation',
+      description:
+        'Led enterprise-wide transformation and GTM initiatives with direct impact on revenue, cost, and customer experience.'
+    },
+    {
+      icon: Mic,
+      title: 'Executive Communication & Stakeholder Influence',
+      description:
+        'Translated complexity into clarity for C-suite stakeholders, speeding up approvals and building executive confidence.'
+    }
+  ];
+
+  const HierarchyTree = ({ rootLabel, rootTagline, items }) => (
+    <div className="flex flex-col items-center w-full">
+      {/* Root circle */}
+      <div className="relative w-44 h-44 sm:w-48 sm:h-48 flex-shrink-0">
+        <motion.div
+          animate={{
+            scale: [1, 1.12, 1],
+            opacity: [0.4, 0.8, 0.4]
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: 'easeInOut'
+          }}
+          className="absolute inset-0 bg-gradient-to-br from-accent-cyan to-accent-purple rounded-full blur-2xl"
+        />
+
+        <motion.div
+          animate={{
+            boxShadow: [
+              '0 0 20px rgba(34, 211, 238, 0.3)',
+              '0 0 55px rgba(168, 85, 247, 0.6)',
+              '0 0 20px rgba(34, 211, 238, 0.3)'
+            ]
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity
+          }}
+          className="relative w-44 h-44 sm:w-48 sm:h-48 rounded-full bg-dark-900 border-2 border-accent-cyan/60 flex flex-col items-center justify-center text-center p-5"
+        >
+          <BrainCircuit className="w-9 h-9 text-accent-cyan mb-2" />
+          <h3 className="text-base font-bold text-white mb-1">
+            {rootLabel}
+          </h3>
+          <p className="gradient-text font-semibold tracking-widest text-xs">
+            {rootTagline}
+          </p>
+        </motion.div>
       </div>
 
-      <h3 className="text-lg font-semibold text-white mb-2">
-        {title}
-      </h3>
+      {/* Trunk stub connecting circle to branch line */}
+      <div className="w-0.5 h-8 bg-gradient-to-b from-accent-cyan to-accent-purple" />
 
-      <p className="text-sm text-gray-400 leading-relaxed">
-        {description}
-      </p>
-    </motion.div>
+      {/* Branches */}
+      <div className="relative border-l-2 border-accent-cyan/40 pl-6 py-1 space-y-4 w-full">
+        {items.map((item, index) => (
+          <motion.div
+            key={item.title}
+            initial={{ opacity: 0, x: -15 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.08 }}
+            className="relative"
+          >
+            <span className="absolute -left-6 top-7 w-6 h-0.5 bg-accent-cyan/40" />
+            <div className="glass-effect rounded-lg border border-gray-700/30 hover:border-accent-cyan/50 transition-all duration-300 px-4 py-3">
+              <div className="flex items-center gap-2 mb-1">
+                <item.icon className="w-4 h-4 text-accent-cyan flex-shrink-0" />
+                <h4 className="text-sm font-semibold text-white">
+                  {item.title}
+                </h4>
+              </div>
+              <p className="text-xs text-gray-400 leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
   );
 
   return (
@@ -60,287 +176,24 @@ const AICenterOfExcellence = () => {
       {/* Background grid */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
-      {/* Animated background glow */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.2, 0.4, 0.2]
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: 'easeInOut'
-        }}
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-accent-cyan/10 rounded-full blur-3xl"
-      />
-
-      <motion.div
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.2, 0.4, 0.2]
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: 'easeInOut'
-        }}
-        className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-purple/10 rounded-full blur-3xl"
-      />
-
       <div className="container-custom relative z-10">
         <SectionHeading
-          title="AI Center of Excellence"
-          subtitle="From AI innovation and research to enterprise adoption and measurable value realization"
+          title="Center of Excellence"
+          subtitle="Leading two Centers of Excellence — AI and Program Excellence — shaping how the organization innovates and delivers"
         />
 
-        {/* Desktop ecosystem visualization */}
-        <div className="hidden lg:block max-w-6xl mx-auto">
-
-          {/* Research + Innovation */}
-          <div className="grid grid-cols-2 gap-8 max-w-3xl mx-auto mb-10">
-            <CapabilityCard
-              icon={BrainCircuit}
-              title="AI Research"
-              description="Emerging AI · Experimentation · Technology Exploration"
-              delay={0.1}
-            />
-
-            <CapabilityCard
-              icon={Lightbulb}
-              title="Innovation"
-              description="Ideas · Hackathons · Strategic AI Use Cases"
-              delay={0.2}
-            />
-          </div>
-
-          {/* Down flow */}
-          <div className="flex justify-center mb-8">
-            <motion.div
-              initial={{ height: 0 }}
-              whileInView={{ height: 55 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="w-px bg-gradient-to-b from-accent-cyan to-accent-purple"
-            />
-          </div>
-
-          {/* AI CoE Core */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.7 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.8,
-              type: 'spring'
-            }}
-            className="flex justify-center mb-8"
-          >
-            <div className="relative">
-              <motion.div
-                animate={{
-                  scale: [1, 1.12, 1],
-                  opacity: [0.4, 0.8, 0.4]
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: 'easeInOut'
-                }}
-                className="absolute inset-0 bg-gradient-to-br from-accent-cyan to-accent-purple rounded-full blur-2xl"
-              />
-
-              <motion.div
-                animate={{
-                  boxShadow: [
-                    '0 0 20px rgba(34, 211, 238, 0.3)',
-                    '0 0 55px rgba(168, 85, 247, 0.6)',
-                    '0 0 20px rgba(34, 211, 238, 0.3)'
-                  ]
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity
-                }}
-                className="relative w-72 h-72 rounded-full bg-dark-900 border-2 border-accent-cyan/60 flex flex-col items-center justify-center text-center p-8"
-              >
-                <BrainCircuit className="w-14 h-14 text-accent-cyan mb-4" />
-
-                <h3 className="text-2xl font-bold text-white mb-2">
-                  AI Center of Excellence
-                </h3>
-
-                <p className="gradient-text font-semibold tracking-widest">
-                  INNOVATE · BUILD · SCALE
-                </p>
-
-                <p className="text-gray-400 text-sm mt-4">
-                  Connecting research, innovation, engineering,
-                  knowledge, and AI adoption
-                </p>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Down flow */}
-          <div className="flex justify-center mb-8">
-            <motion.div
-              initial={{ height: 0 }}
-              whileInView={{ height: 55 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="w-px bg-gradient-to-b from-accent-purple to-accent-cyan"
-            />
-          </div>
-
-          {/* Products + Knowledge */}
-          <div className="grid grid-cols-2 gap-8 max-w-3xl mx-auto mb-10">
-            <CapabilityCard
-              icon={Boxes}
-              title="Products & Assets"
-              description="AI Products · Reusable Assets · Reference Patterns"
-              delay={0.1}
-            />
-
-            <CapabilityCard
-              icon={Share2}
-              title="Knowledge & Context"
-              description="Knowledge Sharing · Context Sharing · Capability Building"
-              delay={0.2}
-            />
-          </div>
-
-          {/* Adoption flow */}
-          <div className="flex justify-center mb-8">
-            <motion.div
-              initial={{ height: 0 }}
-              whileInView={{ height: 55 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="w-px bg-gradient-to-b from-accent-cyan to-accent-purple"
-            />
-          </div>
-
-          {/* AI Adoption */}
-          <div className="max-w-md mx-auto mb-8">
-            <CapabilityCard
-              icon={Rocket}
-              title="AI Adoption"
-              description="Enterprise Enablement · Capability Adoption · Scaling AI Across the Organization"
-              delay={0.1}
-            />
-          </div>
-
-          {/* Final flow */}
-          <div className="flex justify-center mb-8">
-            <motion.div
-              initial={{ height: 0 }}
-              whileInView={{ height: 55 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="w-px bg-gradient-to-b from-accent-purple to-accent-cyan"
-            />
-          </div>
-
-          {/* Value realization */}
-          <motion.div
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="relative glass-effect rounded-2xl border border-accent-purple/40 p-8 text-center overflow-hidden">
-              <motion.div
-                animate={{
-                  x: ['-100%', '100%']
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: 'linear'
-                }}
-                className="absolute top-0 left-0 w-1/3 h-px bg-gradient-to-r from-transparent via-accent-cyan to-transparent"
-              />
-
-              <div className="flex justify-center mb-4">
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-accent-cyan to-accent-purple flex items-center justify-center">
-                  <TrendingUp className="w-8 h-8 text-white" />
-                </div>
-              </div>
-
-              <h3 className="text-3xl font-bold gradient-text mb-4">
-                Accelerating AI Adoption & Value Realization
-              </h3>
-
-              <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-                Turning AI innovation, research, products, reusable assets,
-                knowledge, and context into scalable enterprise capabilities
-                and measurable business outcomes.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Mobile / tablet layout */}
-        <div className="lg:hidden space-y-6">
-          <CapabilityCard
-            icon={BrainCircuit}
-            title="AI Research"
-            description="Emerging AI · Experimentation · Technology Exploration"
+        <div className="grid lg:grid-cols-2 gap-x-10 gap-y-16 max-w-5xl mx-auto">
+          <HierarchyTree
+            rootLabel="AI Center of Excellence"
+            rootTagline="DEFINE · GOVERN · TRANSFORM"
+            items={aiInitiatives}
           />
 
-          <CapabilityCard
-            icon={Lightbulb}
-            title="Innovation"
-            description="Ideas · Hackathons · Strategic AI Use Cases"
+          <HierarchyTree
+            rootLabel="Program Excellence CoE"
+            rootTagline="STANDARDIZE · ALIGN · DELIVER"
+            items={programExcellenceInitiatives}
           />
-
-          <div className="flex justify-center">
-            <div className="w-px h-10 bg-gradient-to-b from-accent-cyan to-accent-purple" />
-          </div>
-
-          <div className="glass-effect p-8 rounded-2xl border border-accent-cyan/50 text-center">
-            <BrainCircuit className="w-12 h-12 text-accent-cyan mx-auto mb-4" />
-
-            <h3 className="text-2xl font-bold text-white mb-2">
-              AI Center of Excellence
-            </h3>
-
-            <p className="gradient-text font-semibold">
-              INNOVATE · BUILD · SCALE
-            </p>
-          </div>
-
-          <CapabilityCard
-            icon={Boxes}
-            title="Products & Assets"
-            description="AI Products · Reusable Assets · Reference Patterns"
-          />
-
-          <CapabilityCard
-            icon={Share2}
-            title="Knowledge & Context"
-            description="Knowledge Sharing · Context Sharing · Capability Building"
-          />
-
-          <CapabilityCard
-            icon={Rocket}
-            title="AI Adoption"
-            description="Enterprise Enablement · Capability Adoption · Scaling AI"
-          />
-
-          <div className="glass-effect p-8 rounded-2xl border border-accent-purple/40 text-center">
-            <TrendingUp className="w-12 h-12 text-accent-purple mx-auto mb-4" />
-
-            <h3 className="text-2xl font-bold gradient-text mb-3">
-              Accelerating AI Adoption & Value Realization
-            </h3>
-
-            <p className="text-gray-300">
-              Turning AI innovation into scalable enterprise capabilities
-              and measurable business outcomes.
-            </p>
-          </div>
         </div>
 
         {/* Leadership statement */}
@@ -349,12 +202,11 @@ const AICenterOfExcellence = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-center text-gray-400 mt-12 max-w-4xl mx-auto leading-relaxed"
+          className="text-center text-gray-400 mt-16 max-w-4xl mx-auto leading-relaxed"
         >
-          I lead the AI Center of Excellence for the service line, creating
-          an innovation ecosystem that brings together AI research, emerging
-          technology exploration, innovative product and asset development,
-          knowledge and context sharing, and enterprise AI adoption.
+          I lead two Centers of Excellence — one shaping how the organization adopts AI, and
+          one shaping how it runs programs at scale — connecting innovation and operating
+          discipline into measurable business outcomes.
         </motion.p>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   Calendar,
@@ -9,6 +10,37 @@ import {
 
 import { timeline } from '../data/timeline';
 import SectionHeading from './SectionHeading';
+
+const companyDomains = {
+  'Ernst & Young (EY)': 'ey.com',
+  'Lenovo India': 'lenovo.com',
+  'Tata Technologies': 'tatatechnologies.com',
+  'Minacs': 'concentrix.com'
+};
+
+const CompanyLogo = ({ company }) => {
+  const [failed, setFailed] = useState(false);
+  const domain = companyDomains[company];
+
+  if (!domain || failed) {
+    return (
+      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent-cyan to-accent-purple flex items-center justify-center flex-shrink-0">
+        <Briefcase className="w-6 h-6 text-white" />
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-12 h-12 rounded-lg bg-white flex items-center justify-center flex-shrink-0 p-1.5 border border-gray-200 dark:border-gray-700">
+      <img
+        src={`https://www.google.com/s2/favicons?domain=${domain}&sz=128`}
+        alt={`${company} logo`}
+        className="w-full h-full object-contain"
+        onError={() => setFailed(true)}
+      />
+    </div>
+  );
+};
 
 const Timeline = () => {
   return (
@@ -23,8 +55,8 @@ const Timeline = () => {
 
       <div className="container-custom relative z-10">
         <SectionHeading
-          title="Technology Leadership Journey"
-          subtitle="Two decades of evolution from software engineering and analytics to enterprise architecture, platform transformation, and AI leadership"
+          title="Leadership Journey"
+          subtitle="Business Analysis → Business Operations & GCC Leadership → Program & Portfolio Management → AI-Led Business Transformation — 20+ years turning large-scale delivery challenges into measurable business outcomes."
         />
 
         <div className="relative max-w-6xl mx-auto">
@@ -127,12 +159,10 @@ const Timeline = () => {
                       {/* Company - Prominent Display */}
                       <div className="mb-5">
                         <div className="flex items-center gap-4">
-                          <div className="w-1.5 h-12 rounded-full bg-gradient-to-b from-accent-cyan to-accent-purple flex-shrink-0" />
+                          <CompanyLogo company={experience.company} />
 
                           <div>
                             <div className="flex items-center gap-2 mb-1">
-                              <Briefcase className="w-5 h-5 text-accent-cyan" />
-
                               <span className="text-xs font-bold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
                                 Organisation
                               </span>
@@ -290,13 +320,13 @@ const Timeline = () => {
           <div className="glass-effect inline-block max-w-5xl px-8 py-6 rounded-2xl border border-accent-cyan/30">
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               <span className="font-semibold gradient-text">
-                Engineering → Analytics & AI → Enterprise Architecture →
-                Product & Platform Transformation → Enterprise AI Leadership
+                Business Analysis → Business Operations & GCC Leadership →
+                Program & Portfolio Management → AI-Led Business Transformation
               </span>
               {' '}
-              — a technology leadership journey focused on turning emerging
-              innovation into scalable enterprise capabilities and measurable
-              business value.
+              — 20+ years turning large-scale delivery challenges into
+              measurable business outcomes across global consulting and
+              industry environments.
             </p>
           </div>
         </motion.div>

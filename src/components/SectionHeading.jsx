@@ -14,7 +14,7 @@ const SectionHeading = ({
       transition={{ duration: 0.5 }}
       className={`mb-12 ${align === 'center' ? 'text-center' : 'text-left'}`}
     >
-      <h2 className={`text-4xl md:text-5xl font-bold mb-4 ${
+      <h2 className={`text-4xl md:text-5xl font-bold mb-4 pb-1 leading-normal ${
         gradient ? 'gradient-text' : 'text-gray-900 dark:text-white'
       }`}>
         {title}

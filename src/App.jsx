@@ -6,8 +6,6 @@ import About from './components/About';
 import AICenterOfExcellence from './components/AICenterOfExcellence';
 import Metrics from './components/Metrics';
 import CustomerStories from './components/CustomerStories';
-import Projects from './components/Projects';
-import TechStack from './components/TechStack';
 import Timeline from './components/Timeline';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -15,7 +13,7 @@ import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const { theme, toggleTheme } = useTheme();
-  const sectionIds = ['home', 'about', 'ai-coe', 'metrics', 'stories', 'projects', 'tech', 'timeline', 'contact'];
+  const sectionIds = ['home', 'about', 'ai-coe', 'metrics', 'stories', 'timeline', 'contact'];
   const activeSection = useActiveSection(sectionIds);
 
   return (
@@ -28,8 +26,6 @@ function App() {
         <AICenterOfExcellence />
         <Metrics />
         <CustomerStories />
-        <Projects />
-        <TechStack />
         <Timeline />
         <Contact />
       </main>
